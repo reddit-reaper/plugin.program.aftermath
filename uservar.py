@@ -114,7 +114,7 @@ REPOZIPURL     = 'https://github.com/reddit-reaper/Addons/raw/master/repository.
 # Enable Notification screen Yes or No
 ENABLE         = 'Yes'
 # Url to notification file
-NOTIFICATION   = 'https://github.com/reddit-reaper/plugin.program.reaperwizard/edit/master/resources/text/notify.txt'
+NOTIFICATION   = 'https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/notify.txt'
 # Use either 'Text' or 'Image'
 HEADERTYPE     = 'Text'
 # Font size of header
