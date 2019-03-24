@@ -11,14 +11,14 @@ ART            = os.path.join(PATH, 'resources', 'art')
 ### User Edit Variables #################################
 #########################################################
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = '[B][COLOR dodgerblue]Aftermath[/COLOR][/B] Wizard'
-BUILDERNAME    = 'Aftermath'
-EXCLUDES       = [ADDON_ID, 'repository.aftermath']
+ADDONTITLE     = 'Reaper Wizard'
+BUILDERNAME    = 'Reddit Reaper'
+EXCLUDES       = [ADDON_ID, 'repository.redditreaper', 'plugin.program.reaperwizard']
 # Enable/Disable the text file caching with 'Yes' or 'No' and age being how often it rechecks in minutes
 CACHETEXT      = 'Yes'
 CACHEAGE       = 30
 # Text File with build info in it.
-BUILDFILE      = 'http://'
+BUILDFILE      = 'https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/builds.txt'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK    = 0
@@ -30,7 +30,7 @@ YOUTUBEFILE    = 'http://'
 # Text File for addon installer.  Leave as 'http://' to ignore
 ADDONFILE      = 'http://'
 # Text File for advanced settings.  Leave as 'http://' to ignore
-ADVANCEDFILE   = 'http://'
+ADVANCEDFILE   = 'https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/advanced.txt'
 #########################################################
 
 #########################################################
@@ -42,18 +42,18 @@ ADVANCEDFILE   = 'http://'
 # Example:  ICONMAINT     = os.path.join(ART, 'mainticon.png')
 #           ICONSETTINGS  = 'http://aftermathwizard.net/repo/wizard/settings.png'
 # Leave as http:// for default icon
-ICONBUILDS     = os.path.join(ART, 'builds.png')
-ICONMAINT      = os.path.join(ART, 'maintenance.png')
-ICONSPEED      = os.path.join(ART, 'speed.png')
-ICONAPK        = os.path.join(ART, 'apkinstaller.png')
-ICONADDONS     = os.path.join(ART, 'addoninstaller.png')
-ICONYOUTUBE    = os.path.join(ART, 'youtube.png')
-ICONSAVE       = os.path.join(ART, 'savedata.png')
-ICONTRAKT      = os.path.join(ART, 'keeptrakt.png')
-ICONREAL       = os.path.join(ART, 'keepdebrid.png')
-ICONLOGIN      = os.path.join(ART, 'keeplogin.png')
-ICONCONTACT    = os.path.join(ART, 'information.png')
-ICONSETTINGS   = os.path.join(ART, 'settings.png')
+ICONBUILDS     = 'http://'
+ICONMAINT      = 'http://'
+ICONSPEED      = 'http://'
+ICONAPK        = 'http://'
+ICONADDONS     = 'http://'
+ICONYOUTUBE    = 'http://'
+ICONSAVE       = 'http://'
+ICONTRAKT      = 'http://'
+ICONREAL       = 'http://'
+ICONLOGIN      = 'http://'
+ICONCONTACT    = 'http://'
+ICONSETTINGS   = 'http://'
 # Hide the section seperators 'Yes' or 'No'
 HIDESPACERS    = 'No'
 # Character used in seperator
@@ -78,9 +78,9 @@ THEME5         = '[COLOR '+COLOR1+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT    = 'No'
 # You can add \n to do line breaks
-CONTACT        = 'Thank you for choosing Aftermath Wizard.\n\nContact us on Github at http://www.github.com/drinfernoo/plugin.program.aftermath/'
+CONTACT        = 'Thank you for choosing Reaper Wizard.\n\nContact me on Github at http://www.github.com/reddit-reaper/plugin.program.reaperwizard/'
 #Images used for the contact window.  http:// for default icon and fanart
-CONTACTICON    = os.path.join(ART, 'qricon.png')
+CONTACTICON    = 'http://'
 CONTACTFANART  = 'http://'
 #########################################################
 
@@ -89,7 +89,7 @@ CONTACTFANART  = 'http://'
 ###        For Those With No Repo #######################
 #########################################################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE     = 'Yes'
+AUTOUPDATE     = 'No'
 # Url to wizard version
 WIZARDFILE     = BUILDFILE
 #########################################################
@@ -101,11 +101,11 @@ WIZARDFILE     = BUILDFILE
 # Enable Auto Install 'Yes' or 'No'
 AUTOINSTALL    = 'Yes'
 # Addon ID for the repository
-REPOID         = 'repository.aftermath'
+REPOID         = 'repository.redditreaeper'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML   = 'https://raw.githubusercontent.com/drinfernoo/repository.aftermath/master/zips/addons.xml'
+REPOADDONXML   = 'https://raw.githubusercontent.com/reddit-reaper/Addons/master/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL     = 'https://raw.githubusercontent.com/drinfernoo/repository.aftermath/master/zips/repository.aftermath/'
+REPOZIPURL     = 'https://github.com/reddit-reaper/Addons/raw/master/repository.redditreaper/'
 #########################################################
 
 #########################################################
@@ -114,12 +114,12 @@ REPOZIPURL     = 'https://raw.githubusercontent.com/drinfernoo/repository.afterm
 # Enable Notification screen Yes or No
 ENABLE         = 'Yes'
 # Url to notification file
-NOTIFICATION   = 'http://'
+NOTIFICATION   = 'https://github.com/reddit-reaper/plugin.program.reaperwizard/edit/master/resources/text/notify.txt'
 # Use either 'Text' or 'Image'
 HEADERTYPE     = 'Text'
 # Font size of header
 FONTHEADER     = 'Font14'
-HEADERMESSAGE  = '[B][COLOR dodgerblue]Aftermath[/COLOR][/B] Wizard'
+HEADERMESSAGE  = 'Reaper Wizard'
 # url to image if using Image 424x180
 HEADERIMAGE    = 'http://'
 # Font for Notification Window

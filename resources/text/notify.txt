@@ -1,4 +1,13 @@
 1
 |||
+Reaper Update Notifications.
 
-Your message here.
+New Build Is OUT! Click DISMISS, another message should pop up
+click FRESH INSTALL! Once install is done, click force close
+and re-open kodi afterwards and you're good to go.
+
+Changelog
+
+Updated all addons, replaced extendedinfo with OpenInfo, updated providers in Gaia, removed civscrapers from
+Seren for the time being as they cause issues with a4kscrapers. Also changed audio on base to Arctic Zephyr.
+Let me know if theres any issues
