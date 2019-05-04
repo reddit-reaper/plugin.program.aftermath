@@ -87,6 +87,7 @@ INCLUDEGAIA     = wiz.getS('includegaia')
 INCLUDESEREN     = wiz.getS('includeseren')
 INCLUDEOVEREASY     = wiz.getS('includeovereasy')
 INCLUDEYODA     = wiz.getS('includeyoda')
+INCLUDEVENOM     = wiz.getS('includevenom')
 INCLUDESCRUBS     = wiz.getS('includescrubs')
 SEPERATE         = wiz.getS('seperate')
 NOTIFY           = wiz.getS('notify')
@@ -98,6 +99,7 @@ LOGINSAVE        = wiz.getS('loginlastsave')
 KEEPFAVS         = wiz.getS('keepfavourites')
 KEEPSOURCES      = wiz.getS('keepsources')
 KEEPPROFILES     = wiz.getS('keepprofiles')
+KEEPPLAYERCORE     = wiz.getS('keepplayercore')
 KEEPADVANCED     = wiz.getS('keepadvanced')
 KEEPREPOS        = wiz.getS('keeprepos')
 KEEPSUPER        = wiz.getS('keepsuper')
@@ -778,6 +780,7 @@ def maintMenu(view=None):
         includeexodusredux = 'true'
         includeovereasy = 'true'
         includeyoda = 'true'
+        includevenom = 'true'
         includescrubs = 'true'
         includeseren = 'true'
     else:
@@ -786,6 +789,7 @@ def maintMenu(view=None):
         includeplacenta = 'true' if INCLUDEPLACENTA == 'true' else 'false'
         includegaia = 'true' if INCLUDEGAIA   == 'true' else 'false'
         includeyoda = 'true' if INCLUDEYODA   == 'true' else 'false'
+        includevenom = 'true' if INCLUDEVENOM == 'true' else 'false'
         includescrubs = 'true' if INCLUDESCRUBS == 'true' else 'false'
         includeseren = 'true' if INCLUDESEREN   == 'true' else 'false'
     sizepack   = wiz.getSize(PACKAGES)
@@ -813,8 +817,8 @@ def maintMenu(view=None):
         addDir ('Enable/Disable Addons',          'enableaddons',    icon=ICONMAINT, themeit=THEME3)
         addFile('Enable/Disable Adult Addons',    'toggleadult',     icon=ICONMAINT, themeit=THEME3)
         addFile('Force Update Addons',            'forceupdate',     icon=ICONMAINT, themeit=THEME3)
-        addFile('Hide Passwords On Keyboard Entry',   'hidepassword',   icon=ICONMAINT, themeit=THEME3)
-        addFile('Unhide Passwords On Keyboard Entry', 'unhidepassword', icon=ICONMAINT, themeit=THEME3)
+        # addFile('Hide Passwords On Keyboard Entry',   'hidepassword',   icon=ICONMAINT, themeit=THEME3)
+        # addFile('Unhide Passwords On Keyboard Entry', 'unhidepassword', icon=ICONMAINT, themeit=THEME3)
     addDir ('[B]Misc Maintenance[/B]'     ,'maint', 'misc',   icon=ICONMAINT, themeit=THEME1)
     if view == "misc" or SHOWMAINT == 'true':
         addFile('Kodi 17 Fix',                    'kodi17fix',       icon=ICONMAINT, themeit=THEME3)
@@ -887,6 +891,7 @@ def maintMenu(view=None):
         if xbmc.getCondVisibility('System.HasAddon(plugin.video.placenta)'): addFile('--- Include Placenta: %s' % includeplacenta.replace('true',on).replace('false',off), 'togglecache', 'includeplacenta', icon=ICONMAINT, themeit=THEME3)
         if xbmc.getCondVisibility('System.HasAddon(plugin.video.scrubsv2)'): addFile( '--- Include Scrubs v2: %s' % includescrubs.replace('true', on).replace('false', off), 'togglecache', 'includescrubs', icon=ICONMAINT, themeit=THEME3)
         if xbmc.getCondVisibility('System.HasAddon(plugin.video.seren)'): addFile('--- Include Seren: %s' % includeseren.replace('true',on).replace('false',off), 'togglecache', 'includeseren', icon=ICONMAINT, themeit=THEME3)
+        if xbmc.getCondVisibility('System.HasAddon(plugin.video.venom)'): addFile('--- Include Venom: %s' % includevenom.replace('true', on).replace('false', off), 'togglecache', 'includevenom', icon=ICONMAINT, themeit=THEME3)
         if xbmc.getCondVisibility('System.HasAddon(plugin.video.yoda)'): addFile('--- Include Yoda: %s' % includeyoda.replace('true',on).replace('false',off), 'togglecache', 'includeyoda', icon=ICONMAINT, themeit=THEME3)
         addFile('--- Enable All Video Addons', 'togglecache', 'true', icon=ICONMAINT, themeit=THEME3)
         addFile('--- Disable All Video Addons', 'togglecache', 'false', icon=ICONMAINT, themeit=THEME3)
@@ -1112,6 +1117,7 @@ def saveMenu():
     sources    = 'true' if KEEPSOURCES   == 'true' else 'false'
     advanced   = 'true' if KEEPADVANCED  == 'true' else 'false'
     profiles   = 'true' if KEEPPROFILES  == 'true' else 'false'
+    playercore = 'true' if KEEPPLAYERCORE == 'true' else 'false'
     favourites = 'true' if KEEPFAVS      == 'true' else 'false'
     repos      = 'true' if KEEPREPOS     == 'true' else 'false'
     super      = 'true' if KEEPSUPER     == 'true' else 'false'
@@ -1128,6 +1134,7 @@ def saveMenu():
     addFile('Save Login Info: %s' % login.replace('true',on).replace('false',off)                  ,'togglesetting', 'keeplogin',      icon=ICONLOGIN, themeit=THEME1)
     addFile('Keep \'Sources.xml\': %s' % sources.replace('true',on).replace('false',off)           ,'togglesetting', 'keepsources',    icon=ICONSAVE,  themeit=THEME1)
     addFile('Keep \'Profiles.xml\': %s' % profiles.replace('true',on).replace('false',off)         ,'togglesetting', 'keepprofiles',   icon=ICONSAVE,  themeit=THEME1)
+    addFile('Keep \'playercorefactory.xml\': %s' % playercore.replace('true', on).replace('false', off), 'togglesetting', 'keepplayercore', icon=ICONSAVE, themeit=THEME1)
     addFile('Keep \'Advancedsettings.xml\': %s' % advanced.replace('true',on).replace('false',off) ,'togglesetting', 'keepadvanced',   icon=ICONSAVE,  themeit=THEME1)
     addFile('Keep \'Favourites.xml\': %s' % favourites.replace('true',on).replace('false',off)     ,'togglesetting', 'keepfavourites', icon=ICONSAVE,  themeit=THEME1)
     addFile('Keep Super Favourites: %s' % super.replace('true',on).replace('false',off)            ,'togglesetting', 'keepsuper',      icon=ICONSAVE,  themeit=THEME1)
@@ -1751,8 +1758,8 @@ def createMenu(type, add, name):
     return menu_items
 
 def toggleCache(state):
-    cachelist = ['includevideo', 'includeall', 'includeexodusredux', 'includegaia', 'includeovereasy', 'includeplacenta', 'includescrubs', 'includeseren', 'includeyoda']
-    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Exodus Redux', 'Include Gaia', 'Include Overeasy', 'Include Placenta', 'Include Scrubs v2', 'Include Seren', 'Include Yoda']
+    cachelist = ['includevideo', 'includeall', 'includeexodusredux', 'includegaia', 'includeovereasy', 'includeplacenta', 'includescrubs', 'includeseren', 'includevenom', 'includeyoda']
+    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Exodus Redux', 'Include Gaia', 'Include Overeasy', 'Include Placenta', 'Include Scrubs v2', 'Include Seren', 'Include Venom', 'Include Yoda']
     if state in ['true', 'false']:
         for item in cachelist:
             wiz.setS(item, state)
@@ -2167,7 +2174,7 @@ def manageSaveData(do):
         mybuilds = xbmc.translatePath(MYBUILDS)
         dir   = [traktit.TRAKTFOLD, debridit.REALFOLD, loginit.LOGINFOLD]
         xmls  = ['advancedsettings.xml', 'sources.xml', 'favourites.xml', 'profiles.xml']
-        keepx = [KEEPADVANCED, KEEPSOURCES, KEEPFAVS, KEEPPROFILES]
+        keepx = [KEEPADVANCED, KEEPSOURCES, KEEPFAVS, KEEPPROFILES, KEEPPLAYERCORE]
         traktit.traktIt('update', 'all')
         loginit.loginIt('update', 'all')
         debridit.debridIt('update', 'all')
@@ -2274,6 +2281,7 @@ def freshStart(install=None, over=False):
                 if name == 'sources.xml' and fold[-1] == 'userdata' and KEEPSOURCES == 'true': wiz.log("Keep Sources: %s" % os.path.join(root, name), xbmc.LOGNOTICE)
                 elif name == 'favourites.xml' and fold[-1] == 'userdata' and KEEPFAVS == 'true': wiz.log("Keep Favourites: %s" % os.path.join(root, name), xbmc.LOGNOTICE)
                 elif name == 'profiles.xml' and fold[-1] == 'userdata' and KEEPPROFILES == 'true': wiz.log("Keep Profiles: %s" % os.path.join(root, name), xbmc.LOGNOTICE)
+                elif name == 'playercorefactory.xml' and fold[-1] == 'userdata' and KEEPPLAYERCORE == 'true': wiz.log("Keep playercorefactory.xml: %s" % os.path.join(root, name), xbmc.LOGNOTICE)
                 elif name == 'advancedsettings.xml' and fold[-1] == 'userdata' and KEEPADVANCED == 'true':  wiz.log("Keep Advanced Settings: %s" % os.path.join(root, name), xbmc.LOGNOTICE)
                 elif name in LOGFILES: wiz.log("Keep Log File: %s" % name, xbmc.LOGNOTICE)
                 elif name.endswith('.db'):

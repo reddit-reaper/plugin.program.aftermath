@@ -1,3 +1,9 @@
+v0.2.5
+- - Rebased on latest aftermath wizard
+
+v0.2.4
+- Rebased on latest aftermath wizard
+
 v0.2.3
 - Rebased on latest aftermath wizard
 - Added Selectable Pre-Configured Advanced settings
