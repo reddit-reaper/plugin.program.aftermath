@@ -1,3 +1,10 @@
+name="Firestick Advanced Settings 100mb"
+section="no"
+url="https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/advancedxmls/firestick.xml"
+icon="http://"
+fanart="http://"
+description="100MB Cache for Firestick"
+
 name="Shield Advanced Settings 280mb"
 section="no"
 url="https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/advancedxmls/shield.xml"
