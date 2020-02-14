@@ -1,5 +1,5 @@
 id="plugin.program.reaperwizard"
-version="1.2.8"
+version="1.2.9"
 zip="https://github.com/reddit-reaper/Addons/raw/master/plugin.program.reaperwizard/plugin.program.reaperwizard-1.2.8.zip"
 
 name="Reaper Build Leia"
