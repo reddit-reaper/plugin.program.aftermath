@@ -29,7 +29,7 @@ YOUTUBEFILE = 'http://'
 # Text File for addon installer.  Leave as 'http://' to ignore
 ADDONFILE = 'http://'
 # Text File for advanced settings.  Leave as 'http://' to ignore
-ADVANCEDFILE = 'https://raw.githubusercontent.com/reddit-reaper/plugin.program.reaperwizard/master/resources/text/advanced.txt'
+ADVANCEDFILE = 'http://'
 #########################################################
 
 #########################################################
@@ -87,9 +87,7 @@ CONTACTFANART = 'http://'
 #        Auto Update For Those With No Repo             #
 #########################################################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE = 'No'
-# Url to wizard version
-WIZARDFILE = BUILDFILE
+AUTOUPDATE = 'Yes'
 #########################################################
 
 #########################################################
