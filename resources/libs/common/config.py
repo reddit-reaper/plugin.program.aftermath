@@ -255,7 +255,6 @@ class Config:
         self.MYBUILDS = os.path.join(self.BACKUPLOCATION, 'My_Builds')
 
         # Logging variables
-        self.WIZDEBUGGING = self.get_setting('addon_debug')
         self.DEBUGLEVEL = self.get_setting('debuglevel')
         self.ENABLEWIZLOG = self.get_setting('wizardlog')
         self.CLEANWIZLOG = self.get_setting('autocleanwiz')
@@ -284,11 +283,32 @@ class Config:
         except:
             return False
 
-    def open_settings(self, id=xbmcaddon.Addon().getAddonInfo('id')):
+    def open_settings(self, id=None, cat=None, set=None, activate=False):
+        offset = [(100,  200), (-100, -80)]
+        if not id:
+            id = self.ADDON_ID
+
         try:
-            return xbmcaddon.Addon(id).openSettings()
+            xbmcaddon.Addon(id).openSettings()
         except:
-            return False
+            import logging
+            logging.log('Cannot open settings for {}'.format(id), level=xbmc.LOGERROR)
+        
+        if int(self.KODIV) < 18:
+            use = 0
+        else:
+            use = 1
+
+        if cat is not None:
+            category_id = cat + offset[use][0]
+            xbmc.executebuiltin('SetFocus({})'.format(category_id))
+            if set is not None:
+                setting_id = set + offset[use][1]
+                xbmc.executebuiltin('SetFocus({})'.format(setting_id))
+                
+                if activate:
+                    xbmc.executebuiltin('SendClick({})'.format(setting_id))
+            
 
     def clear_setting(self, type):
         build = {'buildname': '', 'buildversion': '', 'buildtheme': '',
